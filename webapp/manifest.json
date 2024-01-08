@@ -1,0 +1,24 @@
+{
+  "name": "Malware-url",
+  "version": "1.0.0",
+  "description": "Preventing user from entering malicious URLs",
+  "manifest_version": 3,
+  "author": "Adithyan",
+  "permissions": [
+    "https://*/*", 
+    "http://example.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Malicious URL Detection"
+  }
+}
